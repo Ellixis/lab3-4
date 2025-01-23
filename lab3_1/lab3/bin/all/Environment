@@ -1,0 +1,27 @@
+package all;
+
+
+class Environment {
+    private List<Inspectable> objects = new ArrayList<>();
+    private List<Goat> goats = new ArrayList<>();
+
+    public void addObject(Inspectable object) {
+        objects.add(object);
+    }
+
+    public void addGoat(Goat goat) {
+        goats.add(goat);
+    }
+
+    public void interactWithObjects(Human human) {
+        for (Inspectable object : objects) {
+            human.explore(object);
+        }
+    }
+
+    public void checkGoats() {
+        for (Goat goat : goats) {
+            goat.suffer();
+        }
+    }
+}
